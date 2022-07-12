@@ -227,7 +227,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8d4890766e3c6a4eabaceef96b5c996, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  depthText: {fileID: 2107714789}
+  m_DepthText: {fileID: 2107714789}
 --- !u!4 &46048493
 Transform:
   m_ObjectHideFlags: 0
@@ -1084,8 +1084,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   totalPoints: 0
   totalPointText: {fileID: 743525693}
-  audSource: {fileID: 699347081}
-  coinSound: {fileID: 8300000, guid: ff3a35355aa98aa4a9a4b52c9f4d7195, type: 3}
+  m_AudSource: {fileID: 0}
+  m_CoinSound: {fileID: 0}
   playerCntr: {fileID: 687145299}
 --- !u!4 &699347080
 Transform:
@@ -2440,8 +2440,8 @@ MonoBehaviour:
   comboIsActive: 0
   comboCounterText: {fileID: 1701103135}
   comboTimerImage: {fileID: 734210451}
-  comboDial: {fileID: 734210449}
-  playerContr: {fileID: 687145299}
+  m_ComboDial: {fileID: 734210449}
+  m_PlayerContr: {fileID: 687145299}
 --- !u!1 &1484360262
 GameObject:
   m_ObjectHideFlags: 0

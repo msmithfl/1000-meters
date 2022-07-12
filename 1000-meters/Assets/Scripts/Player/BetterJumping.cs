@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class BetterJumping : MonoBehaviour
 {
-    [SerializeField] private float fallMultiplier = 2.5f;
-    [SerializeField] private float lowJumpMultiplier = 2f;
+    [SerializeField] private float m_FallMultiplier = 2.5f;
+    [SerializeField] private float m_LowJumpMultiplier = 2f;
     private Rigidbody2D m_Rb;
 
     public PlayerController playerContr;
@@ -19,15 +19,15 @@ public class BetterJumping : MonoBehaviour
     {
         if (m_Rb.velocity.y < 0)
         {
-            m_Rb.gravityScale = fallMultiplier;
+            m_Rb.gravityScale = m_FallMultiplier;
         }
         else if (m_Rb.velocity.y > 0 && !Input.GetButton("Jump"))
         {
-            m_Rb.gravityScale = lowJumpMultiplier;
+            m_Rb.gravityScale = m_LowJumpMultiplier;
         }
         else if (Input.GetButton("Jump") && playerContr.m_IsTouchingWall|| Input.GetButton("Jump") && !playerContr.pickCollider.enabled)
         {
-            m_Rb.gravityScale = lowJumpMultiplier;
+            m_Rb.gravityScale = m_LowJumpMultiplier;
         }
         else
         {

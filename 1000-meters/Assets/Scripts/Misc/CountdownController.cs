@@ -12,15 +12,15 @@ public class CountdownController : MonoBehaviour
     public TextMeshProUGUI comboCounterText;
     public Image comboTimerImage;
 
-    [SerializeField] private GameObject comboDial;
-    [SerializeField] private PlayerController playerContr;
+    [SerializeField] private GameObject m_ComboDial;
+    [SerializeField] private PlayerController m_PlayerContr;
 
     //note: combo timer is faster when player is grounded,
     //      due to duplicate code (comboTime -= time) in here and player script
 
     void Start()
     {
-        comboDial.SetActive(false);
+        m_ComboDial.SetActive(false);
     }
 
     void Update()
@@ -38,13 +38,13 @@ public class CountdownController : MonoBehaviour
 
         if (!comboIsActive)
         {
-            playerContr.climbCombo = 0;
+            m_PlayerContr.climbCombo = 0;
         }
 
         comboTimerImage.fillAmount = currentComboTime;
-        comboCounterText.text = playerContr.climbCombo.ToString();
+        comboCounterText.text = m_PlayerContr.climbCombo.ToString();
 
-        if (playerContr.climbCombo >= 2)
+        if (m_PlayerContr.climbCombo >= 2)
         {
             currentComboTime -= Time.deltaTime * timerSpeed;
         }
@@ -52,13 +52,13 @@ public class CountdownController : MonoBehaviour
 
     private void DisplayComboTimer()
     {
-        if (playerContr.climbCombo >= 2)
+        if (m_PlayerContr.climbCombo >= 2)
         {
-            comboDial.SetActive(true);
+            m_ComboDial.SetActive(true);
         }
         else
         {
-            comboDial.SetActive(false);
+            m_ComboDial.SetActive(false);
         }
     }
 }
