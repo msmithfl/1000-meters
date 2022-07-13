@@ -884,36 +884,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 521841734}
   m_CullTransparentMesh: 1
---- !u!1 &576020081
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 576020082}
-  m_Layer: 0
-  m_Name: Collectables
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &576020082
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 576020081}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.225193, y: 3.9150379, z: -0.37404752}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &648402219 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2522099301248075364, guid: b34319d7c8ebfae439c26b3fd22f1587, type: 3}
@@ -2009,14 +1979,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f9b5de5c9fbe2f43a3dfb03b4bc7eff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 0.3
-  fallDeathDelay: 2
-  playerObject: {fileID: 687145294}
-  fallCollider: {fileID: 1259978491}
+  m_MovementSpeed: 0.3
+  m_FallDeathDelay: 2
+  m_PlayerObject: {fileID: 687145294}
+  m_FallCollider: {fileID: 1259978491}
   playerIsDead: 0
-  deathParticles: {fileID: 854493186}
-  audioSrc: {fileID: 1259978492}
-  playerDeathSound: {fileID: 8300000, guid: ac1f706c7f5610f40aeb1bb75181570a, type: 3}
+  m_DeathParticles: {fileID: 854493186}
+  m_AudioSrc: {fileID: 1259978492}
+  m_PlayerDeathSound: {fileID: 8300000, guid: ac1f706c7f5610f40aeb1bb75181570a, type: 3}
 --- !u!4 &1259978490
 Transform:
   m_ObjectHideFlags: 0
@@ -16746,7 +16716,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2031241646
 GameObject:
@@ -16777,7 +16747,7 @@ Transform:
   m_Children:
   - {fileID: 999735641}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &2074922704 stripped
 Animator:

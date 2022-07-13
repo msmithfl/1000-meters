@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    [SerializeField] private float movementSpeed;
-    [SerializeField] private float fallDeathDelay = 2.0f;
+    [SerializeField] private float m_MovementSpeed;
+    [SerializeField] private float m_FallDeathDelay = 2.0f;
 
-    [SerializeField] private GameObject playerObject;
+    [SerializeField] private GameObject m_PlayerObject;
 
-    [SerializeField] private Collider2D fallCollider;
+    [SerializeField] private Collider2D m_FallCollider;
 
     public bool playerIsDead = false;
 
-    [SerializeField] private ParticleSystem deathParticles;
+    [SerializeField] private ParticleSystem m_DeathParticles;
 
-    [SerializeField] private AudioSource audioSrc;
-    [SerializeField] private AudioClip playerDeathSound;
+    [SerializeField] private AudioSource m_AudioSrc;
+    [SerializeField] private AudioClip m_PlayerDeathSound;
 
     private PlayerController m_PlayerContr;
     private GameManager m_GameManager;
@@ -44,12 +44,12 @@ public class CameraController : MonoBehaviour
     {
         if (m_PlayerContr.playerHasJumped || m_PlayerContr.playerHasClimbed)
         {
-            transform.position += new Vector3(0, 1, 0) * Time.deltaTime * movementSpeed;
+            transform.position += new Vector3(0, 1, 0) * Time.deltaTime * m_MovementSpeed;
         }
 
-        if (playerObject.transform.position.y > transform.position.y)
+        if (m_PlayerObject.transform.position.y > transform.position.y)
         {
-            transform.position = new Vector3(transform.position.x, playerObject.transform.position.y, transform.position.z);
+            transform.position = new Vector3(transform.position.x, m_PlayerObject.transform.position.y, transform.position.z);
         }
     }
 
@@ -58,22 +58,22 @@ public class CameraController : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerIsDead = true;
-            deathParticles.transform.position = new Vector3(m_PlayerContr.transform.position.x, deathParticles.transform.position.y, deathParticles.transform.position.z);
-            deathParticles.Play();
-            audioSrc.PlayOneShot(playerDeathSound);
-            fallCollider.enabled = false;    
+            m_DeathParticles.transform.position = new Vector3(m_PlayerContr.transform.position.x, m_DeathParticles.transform.position.y, m_DeathParticles.transform.position.z);
+            m_DeathParticles.Play();
+            m_AudioSrc.PlayOneShot(m_PlayerDeathSound);
+            m_FallCollider.enabled = false; 
             StartCoroutine(ResetToLastCheckpoint());
         }
     }
 
     IEnumerator ResetToLastCheckpoint()
     {
-        yield return new WaitForSeconds(fallDeathDelay);
+        yield return new WaitForSeconds(m_FallDeathDelay);
         m_PlayerContr.ResetPlayer();
         transform.position = m_GameManager.lastCheckPointPosCam;
         m_PlayerContr.playerHasJumped = false;
         m_PlayerContr.playerHasClimbed = false;
-        fallCollider.enabled = true;
+        m_FallCollider.enabled = true;
         playerIsDead = false;
         m_PlayerAnimator.SetBool("EntryIdleState", true);
     }

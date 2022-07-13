@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("For UI")]
     //public Health healthBar;
-    [SerializeField] private int m_Coins = 0;
+    //[SerializeField] private int m_Coins = 0;
 
     [Header("For Camera")]
     public CameraController camContr;
@@ -128,7 +128,7 @@ public class PlayerController : MonoBehaviour
         }
 
         //climbing
-        if (Time.time >= m_NextAttackTime)// && healthBar.health > 0
+        if (Time.time >= m_NextAttackTime)
         {
             if (Input.GetButtonDown("Fire1") && m_IsTouchingWall || Input.GetButtonDown("Jump") && m_IsTouchingWall)
             {
@@ -205,15 +205,13 @@ public class PlayerController : MonoBehaviour
 
     private void Climb()
     {        
-        if (m_CanClimb) // && healthBar.health > 0
+        if (m_CanClimb)
         {           
             m_Rb.velocity = new Vector2(m_Rb.velocity.x, m_ClimbSpeed);
 
             transform.Find("Ground Check").gameObject.SetActive(false);
             pickCollider.enabled = false;
             StartCoroutine(enableColliders());
-
-            //healthBar.health--;
 
             playerHasClimbed = true;
 
@@ -249,7 +247,7 @@ public class PlayerController : MonoBehaviour
         m_Animator.SetFloat("Speed", Mathf.Abs(m_Rb.velocity.x));
         m_Animator.SetBool("OnGround", m_IsTouchingGround);
 
-        if (m_CanClimb)// && healthBar.health > 0
+        if (m_CanClimb)
         {
             m_Animator.SetTrigger("Climb");
         }
@@ -295,7 +293,7 @@ public class PlayerController : MonoBehaviour
 
             if (itemType == "coin")
             {
-                m_Coins++;
+                //m_Coins++;
             }
 
             Destroy(collision.gameObject);

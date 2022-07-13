@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BetterJumping : MonoBehaviour
+public class GravityAdjust : MonoBehaviour
 {
     [SerializeField] private float m_FallMultiplier = 2.5f;
     [SerializeField] private float m_LowJumpMultiplier = 2f;
