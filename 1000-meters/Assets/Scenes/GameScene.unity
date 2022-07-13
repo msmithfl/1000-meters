@@ -1685,7 +1685,23 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1786205109}
     - target: {fileID: 7454739605802224744, guid: 4cfd19f96c92b4f4ab746cbf29c7988a, type: 3}
+      propertyPath: m_AudSource
+      value: 
+      objectReference: {fileID: 1786205112}
+    - target: {fileID: 7454739605802224744, guid: 4cfd19f96c92b4f4ab746cbf29c7988a, type: 3}
+      propertyPath: m_ClapSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 050ea1ea92b93ae469217e29dce72731, type: 3}
+    - target: {fileID: 7454739605802224744, guid: 4cfd19f96c92b4f4ab746cbf29c7988a, type: 3}
+      propertyPath: m_BoxCollider
+      value: 
+      objectReference: {fileID: 1786205109}
+    - target: {fileID: 7454739605802224744, guid: 4cfd19f96c92b4f4ab746cbf29c7988a, type: 3}
       propertyPath: checkpointParticle
+      value: 
+      objectReference: {fileID: 714067387}
+    - target: {fileID: 7454739605802224744, guid: 4cfd19f96c92b4f4ab746cbf29c7988a, type: 3}
+      propertyPath: m_CheckpointParticle
       value: 
       objectReference: {fileID: 714067387}
     - target: {fileID: 7454739605802224747, guid: 4cfd19f96c92b4f4ab746cbf29c7988a, type: 3}

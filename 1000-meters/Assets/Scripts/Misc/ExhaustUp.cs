@@ -4,16 +4,18 @@ using UnityEngine;
 
 public class ExhaustUp : MonoBehaviour
 {
-    private GameManager m_GameManager;
-    private PointSystem m_PointSystem;
-    public Health healthBar;
-    [SerializeField] private Collider2D boxCollider;
-    [SerializeField] private ParticleSystem checkpointParticle;
+    [SerializeField] private Collider2D m_BoxCollider;
+    [SerializeField] private ParticleSystem m_CheckpointParticle;
 
-    [SerializeField] private AudioSource audSource;
-    [SerializeField] private AudioClip clapSound;
+    public Health healthBar;
+
+    [SerializeField] private AudioSource m_AudSource;
+    [SerializeField] private AudioClip m_ClapSound;
 
     private float cameraXpos = -2.22f;
+
+    private GameManager m_GameManager;
+    private PointSystem m_PointSystem;
 
     private void Start()
     {
@@ -25,14 +27,14 @@ public class ExhaustUp : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            boxCollider.enabled = false;
+            m_BoxCollider.enabled = false;
             healthBar.currentMaxHealth++;
             healthBar.health++;
             m_GameManager.checkpointTotal = m_PointSystem.totalPoints;
             m_GameManager.lastCheckPointPos = transform.position;
             m_GameManager.lastCheckPointPosCam = new Vector3(cameraXpos, transform.position.y, -10);
-            checkpointParticle.Play();
-            audSource.PlayOneShot(clapSound);
+            m_CheckpointParticle.Play();
+            m_AudSource.PlayOneShot(m_ClapSound);
         }
     }
 }
