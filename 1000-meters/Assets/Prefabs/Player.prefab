@@ -76,7 +76,6 @@ GameObject:
   - component: {fileID: 2522099301845628315}
   - component: {fileID: 2522099301845628313}
   - component: {fileID: 2522099301845628311}
-  - component: {fileID: 1988085411}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -273,7 +272,6 @@ MonoBehaviour:
   pickCollider: {fileID: 2522099301845628310}
   m_PickCollierTime: 0
   m_IsTouchingWall: 0
-  healthBar: {fileID: 1988085411}
   m_Coins: 0
   camContr: {fileID: 0}
   CameraMoveOn: 1
@@ -295,42 +293,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e34b2b7814983374b8d0f236f894c492, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fallMultiplier: 2.5
-  lowJumpMultiplier: 2
+  m_FallMultiplier: 2.5
+  m_LowJumpMultiplier: 2
   playerContr: {fileID: 0}
---- !u!114 &1988085411
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2522099301845628316}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e499e714e943b14bb2dd6f60f86c5fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 3
-  currentMaxHealth: 3
-  totalHealth: 10
-  hearts:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  fullHeart: {fileID: 21300000, guid: 0b9813480f6703f43b7a43eb9e71d251, type: 3}
-  emptyHeart: {fileID: 21300000, guid: 088fd05d0a8a8a949aa55d98df2565df, type: 3}
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 8
-  groundCheckPoint: {fileID: 2522099301248075364}
-  groundCheckSize: {x: 0.09, y: 0.02}
-  camContr: {fileID: 0}
-  plyrContr: {fileID: 0}
-  uiFadeOffset: 2

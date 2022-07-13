@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour
     public bool m_IsTouchingWall;
 
     [Header("For UI")]
-    public Health healthBar;
+    //public Health healthBar;
     [SerializeField] private int m_Coins = 0;
 
     [Header("For Camera")]
@@ -128,7 +128,7 @@ public class PlayerController : MonoBehaviour
         }
 
         //climbing
-        if (Time.time >= m_NextAttackTime && healthBar.health > 0)
+        if (Time.time >= m_NextAttackTime)// && healthBar.health > 0
         {
             if (Input.GetButtonDown("Fire1") && m_IsTouchingWall || Input.GetButtonDown("Jump") && m_IsTouchingWall)
             {
@@ -205,7 +205,7 @@ public class PlayerController : MonoBehaviour
 
     private void Climb()
     {        
-        if (m_CanClimb && healthBar.health > 0)
+        if (m_CanClimb) // && healthBar.health > 0
         {           
             m_Rb.velocity = new Vector2(m_Rb.velocity.x, m_ClimbSpeed);
 
@@ -213,7 +213,7 @@ public class PlayerController : MonoBehaviour
             pickCollider.enabled = false;
             StartCoroutine(enableColliders());
 
-            healthBar.health--;
+            //healthBar.health--;
 
             playerHasClimbed = true;
 
@@ -249,7 +249,7 @@ public class PlayerController : MonoBehaviour
         m_Animator.SetFloat("Speed", Mathf.Abs(m_Rb.velocity.x));
         m_Animator.SetBool("OnGround", m_IsTouchingGround);
 
-        if (m_CanClimb && healthBar.health > 0)
+        if (m_CanClimb)// && healthBar.health > 0
         {
             m_Animator.SetTrigger("Climb");
         }

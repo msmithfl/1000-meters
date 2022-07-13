@@ -2,12 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ExhaustUp : MonoBehaviour
+public class CheckpointScript : MonoBehaviour
 {
     [SerializeField] private Collider2D m_BoxCollider;
     [SerializeField] private ParticleSystem m_CheckpointParticle;
-
-    public Health healthBar;
 
     [SerializeField] private AudioSource m_AudSource;
     [SerializeField] private AudioClip m_ClapSound;
@@ -28,8 +26,6 @@ public class ExhaustUp : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             m_BoxCollider.enabled = false;
-            healthBar.currentMaxHealth++;
-            healthBar.health++;
             m_GameManager.checkpointTotal = m_PointSystem.totalPoints;
             m_GameManager.lastCheckPointPos = transform.position;
             m_GameManager.lastCheckPointPosCam = new Vector3(cameraXpos, transform.position.y, -10);
