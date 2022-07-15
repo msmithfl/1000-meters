@@ -10,7 +10,7 @@ public class CheckpointScript : MonoBehaviour
     [SerializeField] private AudioSource m_AudSource;
     [SerializeField] private AudioClip m_ClapSound;
 
-    private float cameraXpos = -2.22f;
+    private float m_CameraXpos = -2.22f;
 
     private GameManager m_GameManager;
     private PointSystem m_PointSystem;
@@ -28,7 +28,7 @@ public class CheckpointScript : MonoBehaviour
             m_BoxCollider.enabled = false;
             m_GameManager.checkpointTotal = m_PointSystem.totalPoints;
             m_GameManager.lastCheckPointPos = transform.position;
-            m_GameManager.lastCheckPointPosCam = new Vector3(cameraXpos, transform.position.y, -10);
+            m_GameManager.lastCheckPointPosCam = new Vector3(m_CameraXpos, transform.position.y, -10);
             m_CheckpointParticle.Play();
             m_AudSource.PlayOneShot(m_ClapSound);
         }
