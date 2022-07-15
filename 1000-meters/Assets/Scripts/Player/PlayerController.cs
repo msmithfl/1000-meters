@@ -146,9 +146,6 @@ public class PlayerController : MonoBehaviour
 
     private void Movement()
     {
-        //original movement
-        //m_Rb.velocity = new Vector2(horizontalInput * speed, m_Rb.velocity.y);
-
         //celeste style movement, constant speed, consistent animation, airSpeed variable
         //animator is there for front facing idle state upon respawn
         if (m_HorizontalInput > 0.3f)
