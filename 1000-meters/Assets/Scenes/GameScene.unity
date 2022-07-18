@@ -16992,7 +16992,7 @@ PrefabInstance:
       objectReference: {fileID: 687145304}
     - target: {fileID: 2522099301845628313, guid: b34319d7c8ebfae439c26b3fd22f1587, type: 3}
       propertyPath: m_JumpForce
-      value: 2.82
+      value: 2.83
       objectReference: {fileID: 0}
     - target: {fileID: 2522099301845628313, guid: b34319d7c8ebfae439c26b3fd22f1587, type: 3}
       propertyPath: CameraMoveOn
